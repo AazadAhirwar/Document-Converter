@@ -1,0 +1,169 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styles */
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents overflow on small screens */
+}
+
+/* Container for the file converter with gradient background */
+.converter-container {
+    background: linear-gradient(135deg, #2407a8, #df13ce); /* Gradient: purple to pink */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    color: white; /* White text color for contrast */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, height 0.4s ease-in-out;
+    height: auto;
+}
+
+/* When resizing, the container grows */
+.converter-container.resizing {
+    transform: scale(1.05); /* Slightly enlarges the container */
+}
+
+/* Title styles */
+.converter-container h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white; /* White text to match the gradient */
+}
+
+/* Description text */
+.converter-container p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Labels */
+.converter-container label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: white; /* White text for readability */
+    text-align: center;
+}
+
+/* Select dropdown and input fields */
+.converter-container select,
+.converter-container input[type="file"],
+.converter-container input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Submit button */
+.submit-button {
+    background-color: #ffffff; /* Light background for the button */
+    color: #000000; /* Dark text */
+    padding: 10px;
+    border: none;
+    border-radius: 6px; 
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth hover animation */
+}
+
+.submit-button:hover {
+    background-color: #32c20d; /* Green background on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Download link and error messages */
+.converter-container a {
+    color: inherit; /* Remove color styling, inheriting from parent */
+    background-color: transparent; /* Remove background */
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove border radius */
+    text-decoration: none; /* Default link style */
+}
+
+.converter-container a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.converter-container p[style="color: red;"] {
+    margin-top: 10px;
+}
+
+/* Animation for the form container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px)
+{
+    .converter-container {
+        width: 90%; /* Make container width responsive */
+        padding: 15px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Download link and error messages */
+.converter-container a {
+    color: inherit; /* Inherit text color from parent */
+    background-color: transparent; /* Set transparent background */
+    padding: 0; /* Remove any padding */
+    border-radius: 0; /* Remove border radius */
+    text-decoration: none; /* No underline by default */
+}
+
+.converter-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+    background-color: transparent; /* Ensure no background color on hover */
+}
+
+/* Download link and error messages */
+.converter-container a {
+    color: inherit; /* Inherit text color from parent */
+    background-color: transparent; /* Set transparent background */
+    display: block; /* Ensures the link occupies its own line */
+    margin-top: 15px; /* Adds space above the link */
+    text-decoration: none; /* No underline by default */
+}
+
+.converter-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+    background-color: transparent; /* Ensure no background color on hover */
+}

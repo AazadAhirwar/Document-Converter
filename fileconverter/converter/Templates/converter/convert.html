@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="{% static 'converter/css/styles.css' %}">
+</head>
+<body>
+    <div class="converter-container">
+        <a href="/" class="home-button">Home</a>
+        <h1>Easy Convertify</h1>
+        <p>Select Conversion Type:</p> 
+                
+        <form id="converter-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <select id="conversion_type" name="conversion_type" required>
+                    <option value="">--Select Conversion Type--</option>
+                    <option value="jpg_to_pdf">JPG to PDF</option>
+                    {% comment %} <option value="jpeg_to_png">JPEG to PNG</option>  {% endcomment %}
+                    <option value="merge_pdfs">Merge PDFs</option>
+                    <option value="resize_image">Resize Image</option>
+                    <option value="compress_document">Compress Document</option>
+                    <option value="word_to_pdf">Word to PDF</option>
+                    <option value="video_to_audio">Video to Audio</option> 
+                </select>
+            </div>
+
+            <div id="file-input-section"></div>
+
+            <button type="submit" class="submit-button">Convert</button>
+        </form>
+         
+        {% if result_url %}
+            <p><a href="{{ result_url }}" download>Download File</a></p>
+        {% endif %}
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    
+    </div>
+
+    <script>
+        document.getElementById("conversion_type").addEventListener("change", function() {
+            var fileInputSection = document.getElementById("file-input-section");
+            var conversionType = this.value;
+            var converterContainer = document.querySelector(".converter-container");
+
+            fileInputSection.innerHTML = ""; 
+
+            if (conversionType === "compress_document" || conversionType === "jpg_to_pdf" || 
+                conversionType === "jpeg_to_png" || conversionType === "merge_pdfs") {
+                fileInputSection.innerHTML = `
+                    <div class="form-group">
+                        <label for="files">Select Files:</label>
+                        <input type="file" name="files" multiple required>
+                    </div>`;
+            } else if (conversionType === "resize_image") {
+                fileInputSection.innerHTML = `
+                    <div class="form-group">
+                        <label for="file">Select Image:</label>
+                        <input type="file" name="file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="width">Width:</label>
+                        <input type="number" name="width" placeholder="Value in pixel (Eg. 100 px)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height:</label>
+                        <input type="number" name="height" placeholder="Value in pixel (Eg. 100 px)" required>
+                    </div>`;
+            } else if (conversionType === "word_to_pdf") {
+                fileInputSection.innerHTML = `
+                    <div class="form-group">
+                        <label for="file">Select Word Document:</label>
+                        <input type="file" name="file" accept=".docx" required>
+                    </div>`;
+            } else if (conversionType === "video_to_audio") { 
+                fileInputSection.innerHTML = `
+                    <div class="form-group">
+                        <label for="file">Select Video File:</label>
+                        <input type="file" name="file" accept=".mp4,.avi,.mov" required>
+                    </div>`;
+            }else if (conversionType === "jpg_to_pdf") {
+                fileInputSection.innerHTML = `
+                    <div class="form-group">
+                        <label for="file">Select JPG Image:</label>
+                        <input type="file" name="file" accept=".jpg, .jpeg" required>
+                    </div>`;
+            }
+            
+
+            converterContainer.style.height = "auto";
+        });
+
+        document.getElementById("converter-form").addEventListener("submit", function(event) {
+            var converterContainer = document.querySelector(".converter-container");
+            converterContainer.classList.add("resizing");
+
+            setTimeout(function() {
+                converterContainer.classList.remove("resizing");
+            }, 3000); 
+        });
+    </script>
+</body>
+
+<style>
+    /* Download link and error messages */
+    .converter-container a {
+        color: inherit; /* Inherit text color from parent */
+        background-color: transparent; /* Set transparent background */
+        display: block; /* Ensures the link occupies its own line */
+        margin-top: 15px; /* Adds space above the link */
+        text-decoration: none; /* No underline by default */
+    }
+
+    .converter-container a:hover {
+        background-color: transparent;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+
+ 
+        /* Set the background image for the page */
+        body {
+            background-image: url("{% static 'converter/images/hero-bg.png' %}"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps the image in place when scrolling */
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        /* Style the converter container */
+        .converter-container {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 5% auto; /* Centers the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Adjust link and hover styles */
+        .converter-container a {
+            color: inherit; /* Inherit text color from parent */
+            background-color: transparent;
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+    
+        .converter-container a:hover {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    
+</style>
+</html>

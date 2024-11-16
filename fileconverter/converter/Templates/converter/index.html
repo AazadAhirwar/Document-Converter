@@ -1,0 +1,823 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Converter</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'converter/css/bootstrap.css' %}">
+
+  <!-- Fonts style (from Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{% static 'converter/css/style.css' %}">
+
+  <!-- Owl Slider stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+  <!-- Font Awesome style -->
+  <link rel="stylesheet" href="{% static 'converter/css/font-awesome.min.css' %}">
+
+  <!-- Responsive style -->
+  <link rel="stylesheet" href="{% static 'converter/css/responsive.css' %}">
+</head>
+<body>
+   
+  <body>
+
+      <!-- Background image -->
+<div class="hero_area">
+  <div class="hero_bg_box">
+    <div class="bg_img_box">
+      <img src="{% static 'converter/images/hero-bg.png' %}" alt="Background Image">
+    </div>
+  </div>
+
+  
+  <!-- Header section starts -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="">
+          <span>Convertify</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="">Home</a> 
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">About</a>  <!-- Changed here -->
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">Services</a>  <!-- Changed here -->
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">Why Us</a>  <!-- Changed here -->
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">Team</a>  <!-- Changed here -->
+          </li>
+            {% comment %} <form class="form-inline">
+              <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form> {% endcomment %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+<!-- Slider section -->
+<section class="slider_section">
+  <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-box">
+                <h1>
+                convertify</h1>
+                <p>It features an intuitive user interface that allows users to upload files, select desired output formats, and download the converted files seamlessly. The application aims to simplify the conversion process, making it accessible and efficient for users with diverse file handling needs.</p>
+                <div class="btn-box">
+                  <a href="{% url 'convert' %}" class="btn1">Get Started</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="{% static 'converter/images/0.png' %}" alt="Slider Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for other carousel items -->
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-box">
+                <h1>Convertify</h1>
+                <p>It features an intuitive user interface that allows users to upload files, select desired output formats, and download the converted files seamlessly. The application aims to simplify the conversion process, making it accessible and efficient for users with diverse file handling needs.</p>
+                <div class="btn-box">
+                  <a href="{% url 'convert' %}" class="btn1">Get Started</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="{% static 'converter/images/slider-img.png' %}" alt="Slider Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#customCarousel1" data-slide-to="1"></li>
+    </ol>
+  </div>
+</section>
+<!-- end slider section -->
+     </div>
+  
+  
+    <!-- service section -->
+  
+    <section class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
+          <div class="heading_container heading_center">
+            <h2>
+              Our <span>Services</span>
+            </h2>
+            <p>
+              Convertify provides a comprehensive suite of services designed to streamline file conversion for users. Key offerings include multi-format conversion (PDF, DOCX, JPG, MP4, and more), batch processing for efficient uploads, and a user-friendly interface for seamless navigation. 
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/file-format.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Multi-Format Conversion
+                  </h5>
+                  <p>
+                    Convert files between various formats such as PDF, DOCX, JPG, PNG, MP4, and more. This ensures users can switch between formats based on their needs.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="images/s2.png" alt="">
+                  <img src="{% static 'converter/images/file.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    File Compression
+                  </h5>
+                  <p>
+                    Convertify also offers robust file compression services, allowing users to reduce the size of large files without compromising quality.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/4946408.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    User-Friendly Interface
+                  </h5>
+                  <p>
+                    Provide an intuitive and easy-to-navigate interface, making the conversion process and compression process straightforward for users of all skill levels.</p>
+                    <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              View All
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end service section -->
+  
+  
+    <!-- about section -->
+  
+    <section class="about_section layout_padding">
+      <div class="container  ">
+        <div class="heading_container heading_center">
+          <h2>
+            About <span>Us</span>
+          </h2>
+          <p>
+            Convertify is a powerful and intuitive file conversion tool built to make converting between various file formats simple and efficient. Designed with user-friendliness in mind, the application offers seamless batch processing, high-quality output, and fast conversion speeds.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="{% static 'converter/images/Document management.png' %}" alt="Background Image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h3>
+                Document Management
+              </h3>
+              <p>
+                Convertify offers a comprehensive document management solution, streamlining the way users handle their files. With support for multiple formats like PDF, DOCX, TXT, and more, the application allows users to convert, compress, and organize their documents effortlessly.
+              </p>
+              <p>
+                Whether you need to convert files for professional use or simply keep your documents well-organized, Convertify ensures a seamless, efficient experience with a focus on security and accessibility.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end about section -->
+  
+    <!-- why section -->
+  
+    <section class="why_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            Why Choose <span>Us</span>
+          </h2>
+        </div>
+        <div class="why_container">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'converter/images/12327041.png' %}" alt="Background Image">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Versatile File Conversion
+              </h5>
+              <p>
+                Convertify offers unparalleled versatility, supporting a wide array of file formats, including documents (PDF, DOCX), images (JPG, PNG), videos (MP4, AVI), and audio files (MP3, WAV). Whether you're a professional converting work files or a casual user handling media formats, Convertify makes the conversion process smooth and hassle-free.
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'converter/images/15605293.png' %}" alt="Background Image">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Regular Updates
+              </h5>
+              <p>
+                Convertify is continuously evolving to meet the growing needs of our users. We regularly roll out updates that introduce new file formats, improve performance, and incorporate the latest technological advancements. Our commitment to innovation ensures that you always have access to the best tools and the latest features for all your file conversion needs.
+
+
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'converter/images/590501.png' %}" alt="Background Image">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Secure and Reliable
+              </h5>
+              <p>
+                We understand the importance of security when handling personal or sensitive files. Convertify employs advanced encryption protocols and secure file handling procedures to ensure that your data is safe throughout the entire conversion process. Files are processed securely, and we never store your data longer than necessary, giving you peace of mind with every conversion.
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'converter/images/w2.png' %}" alt="Background Image">
+            </div>
+            <div class="detail-box">
+              <h5>
+                High-Quality Output
+              </h5>
+              <p>
+                Maintaining the integrity of your files is our top priority. Convertify ensures that all conversions retain the highest possible quality, whether you're dealing with high-resolution images, professional documents, or high-definition videos. You can trust that your files will be converted without losing detail, clarity, or important data, keeping your output as polished as the original.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end why section -->
+  
+    <!-- team section -->
+    <section class="team_section layout_padding">
+      <div class="container-fluid">
+        <div class="heading_container heading_center">
+          <h2 class="">
+            Our <span> Team</span>
+          </h2>
+        </div>
+  
+        <div class="team_container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/me.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Aazad
+                  </h5>
+                  <p>
+                    Student of AI/DS
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/me.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Tejpal Jatav
+                  </h5>
+                  <p>
+                    Reseacher
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/me.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Deepesh Sahu
+                  </h5>
+                  <p>
+                    Marketing Head
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'converter/images/me.png' %}" alt="Background Image">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Ruchi Jain
+                  </h5>
+                  <p>
+                    Project co-ordinator
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end team section -->
+  
+  
+    <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          What says our <span>Customers</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'converter/images/my photo.jpg' %}" alt="Background Image">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Priyanshu Pathekar
+                    </h6>
+                    <p>
+                      Student of AI/DS
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Convertify has completely transformed the way I handle file conversions. The process is fast and effortless, even when working with large files. It saves me so much time compared to other converters I’ve used in the past. </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'converter/images/my photo.jpg' %}" alt="Background Image">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Aryan Sharma
+                    </h6>
+                    <p>
+                      ML Engineer
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  The customer support team at Convertify is outstanding. Anytime I’ve had an issue, they’ve been quick to respond and always helpful. It’s rare to find a service that offers such great technical support.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'converter/images/my photo.jpg' %}" alt="Background Image">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Ruchi Jain
+                    </h6>
+                    <p>
+                      Associate Professor, SISTec
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  most about Convertify is its focus on security. I often handle sensitive documents, and I feel safe knowing that Convertify ensures the confidentiality of my files during the conversion process. The high-quality output just icing on the cake!</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'converter/images/my photo.jpg' %}" alt="Background Image">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Subham Yadav
+                    </h6>
+                    <p>
+                      Web Developer
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  As a small business owner, I deal with many different file formats daily. Convertify has been a game-changer for me, allowing me to quickly convert and compress files without losing quality. I would definitely recommend it. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  
+  
+    <!-- info section -->
+  
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+              <h4>
+                Address
+              </h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>
+                    Location
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    Call +91 6232384817
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    demo@gmail.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_detail">
+              <h4>
+                Info
+              </h4>
+              <p>
+                necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 mx-auto info_col">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="active" href="index.html">
+                  Home
+                </a>
+                <a class="" href="about.html">
+                  About
+                </a>
+                <a class="" href="service.html">
+                  Services
+                </a>
+                <a class="" href="why.html">
+                  Why Us
+                </a>
+                <a class="" href="team.html">
+                  Team
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col ">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end info section -->
+  
+    <!-- footer section -->
+    <section class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Convertify</a>
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+  
+    <!-- jQery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  </body>
+  
+  <style> 
+    /* Hero Area Styles */
+  .hero_area {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Background Box */
+  .hero_bg_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .bg_img_box img {
+    width: 100%;
+    height: 1%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+  }
+  
+  /* Header Styles */
+  .header_section {
+    position: relative;
+    z-index: 1; /* Above the background */
+  }
+  
+  
+  
+  /* Slider Section */
+  .slider_section {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  .background-container {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+  
+  @media (max-width: 768px) {
+    .hero_bg_box {
+        height: calc(100vh + 50px); /* Reduce height on smaller screens */
+    }
+  
+    .slider_section {
+        padding-top: 50px; /* Adjust padding for smaller screens */
+    }
+  
+    .header_section {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+  }
+  
+ 
+
+
+    .box {
+    background-color: #ffffff; /* Default background color */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+    border-radius: 8px; /* Optional: rounded corners for the box */
+    padding: 15px; /* Optional: padding for better spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for depth */
+    border: 2px solid transparent; /* Initial border */
+  }
+  
+  .box:hover {
+    border: 2px solid #1818c7; /* Change border color to blue on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow for depth */
+  } 
+
+
+  .slider_section .carousel-item .row {
+    margin-top: -67px; /* Adjust the value to move content upwards */
+}
+
+
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $('.client_owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        items: 2,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true
+      });
+    });
+    
+  </script>
+
+  
+
+</html>
